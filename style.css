@@ -1,0 +1,298 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  /* font-family: 'Orbitron', sans-serif; */
+}
+
+/* Define a transition duration during page visits */
+html.is-changing .transition-fade {
+  transition: opacity 0.25s;
+  opacity: 1;
+}
+/* Define the styles for the unloaded pages */
+html.is-animating .transition-fade {
+  opacity: 0;
+}
+
+h2, h3, h4 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+button {
+  cursor: pointer;
+}
+
+header {
+  background-color: rgb(185, 185, 185);
+  padding: 12px 16px 12px 40px;
+  text-align: right;
+  border-bottom: 1px solid rgb(69, 69, 69);
+  /* box-shadow: 0px 11px 32px -3px rgba(0,0,0,0.38); */
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.logo {
+  position: absolute;
+  top: 6px;
+  left: 20px;
+  max-width: 37px;
+}
+
+header > a {
+  padding: 10px 15px;
+  color: #000; /* blue colors for links too */
+  font-weight: bold;
+  text-decoration: inherit; /* no underline */
+  font-family: 'Orbitron', sans-serif;
+}
+
+header > a:hover {
+  background-color: #f1f1f1;
+}
+
+header > a.selected {
+  border-bottom: 2px solid blue;
+}
+
+.page-wrapper {
+  max-width: 800px;
+  padding: 10px 15px;
+  margin: 0 auto 40px auto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 12px;
+}
+
+.tools-wrapper {
+  background-color: rgb(185, 185, 185);
+  border: 1px solid rgb(125, 125, 125);
+  padding: 12px 12px;
+  border-radius: 14px;
+  width: 615px; /* 615 */
+}
+
+.image-position-buttons-wrapper,
+.image-size-buttons-wrapper {
+  margin: 16px 12px;
+  display: flex;
+  gap: 10px;
+}
+
+.canvas-wrapper {
+  background-color: #000;
+  display: inline-block;
+  overflow: hidden;
+  border-radius: 24px;
+  height: 1092px;
+  box-shadow: 10px 10px 32px -3px rgba(0,0,0,0.38);
+}
+
+.rules-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.add-ruleset-button-wrapper {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.select-wrapper {
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+.hidden {
+  display: none;
+}
+
+.bordered {
+  border: 1px solid grey;
+  border-radius: 4px;
+  padding: 6px 8px;
+}
+
+/* DECK BUILDER */
+.deck-builder-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+}
+
+.card-list-wrapper,
+.left-column-wrapper {
+  padding: 10px 12px;
+  height: calc(100vh - 100px);
+  border-radius: 8px;
+  box-shadow: 10px 10px 32px -3px rgba(0,0,0,0.38);
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 1px solid #f1f1f1;
+  width: 50%;
+}
+
+/* .card-list-wrapper {
+
+}*/
+
+.search-field-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-field {
+  width: 100%;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.fieldset-filters {
+  margin-bottom: 12px;
+} 
+
+.card-list-item {
+  display: flex;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 6px 4px 6px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.list-item-name {
+  width: 100%;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 0 4px;
+  font-size: 18px;
+}
+
+.list-item-name:hover {
+  background-color: rgb(124, 231, 255);
+}
+
+.list-item-add-main {
+  width: 110px;
+  text-align: center;
+}
+
+.list-item-add-side {
+  width: 160px;
+  text-align: center;
+}
+
+.card-view-wrapper {
+  text-align: center;
+  padding: 4px 6px;
+  background-color: #f1f1f1;
+  margin-bottom: 12px;
+}
+
+.deck,
+.sideboard {
+  background-color: #f1f1f1;
+  padding: 4px 6px;
+  border-radius: 4px;
+}
+
+.all-icons-image {
+  cursor: pointer;
+}
+
+/* /////// Carota */
+
+#canvas-editor {
+  position: relative;
+  height: 500px;
+}
+
+#exampleToolbar {
+  left: 10px;
+  top: 10px;
+  right: 10px;
+  overflow: hidden;
+}
+
+#exampleToolbar label {
+  border: 1px solid silver;
+  padding: 1px 2px 0 1px;
+}
+
+#exampleEditor {
+  border: 1px solid silver;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  right: 10px;
+  bottom: 40px;
+}
+
+#examplePersistence {
+  top: 40px;
+  width: 50%;
+  right: 0;
+  bottom: 40px;
+}
+
+#examplePersistence div {
+  left: 10px;
+  top: 0;
+  right: 10px;
+  bottom: 0;
+  overflow: hidden;
+}
+
+#examplePersistence textarea {
+  width: 99%;
+  height: 99%;
+  border: none;
+  background: rgb(30, 30, 30);
+  color: rgb(0, 200, 20);
+}
+
+button img {
+  width: 12px;
+  height: 12px;
+}
+
+.editablePage {
+  display: none;
+}
+.display-none {
+  display: none;
+}
+
+#exampleEditor {
+  background-color: #fff;
+}

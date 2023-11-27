@@ -1,0 +1,24 @@
+{
+  "name": "heliosphere",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^4.4.5"
+  },
+  "dependencies": {
+    "@barba/core": "^2.9.7",
+    "animejs": "^3.2.1",
+    "html-to-image": "^1.11.11",
+    "js-search": "^2.0.1",
+    "piexifjs": "^1.0.4",
+    "swup": "^4.4.2",
+    "uhtml": "^3.2.2",
+    "zustand": "^4.4.1"
+  }
+}

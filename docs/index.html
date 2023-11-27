@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Creator</title>
+    
+    <script src="carota-min.js"></script>
+    <!-- <link rel="stylesheet" href="/water.css"> -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=MedievalSharp&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/card-maker/assets/index-0ec293b1.js"></script>
+    <link rel="stylesheet" href="/card-maker/assets/index-a83eab9d.css">
+  </head>
+  <body>
+    <header>
+      <img src="/card-maker/double-ringed-orb.svg" class="logo" alt="Heliosphere icon">
+      <a href="https://docs.google.com/spreadsheets/d/11-xSvM_CJmCbuNCdTOg_wRax18wVTG6VtCS-28vGZhs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Card List</a>
+    </header>
+    <main id="swup" class="transition-fade">
+      <div class="wrapper">
+        <div class="canvas-wrapper">
+          <canvas id="imageCanvas" width="788px" height="1092px"></canvas>
+        </div>
+        <div class="tools-wrapper">
+          <!-- Managed by uHtml -->
+          <div id="app"></div>
+          <div id="canvas-editor">
+            <div id="exampleToolbar">
+            <select id="font" class="display-none">
+                <option value="serif">Times</option>
+                <option value="sans-serif">Helvetica</option>
+                <option value="monospace">Courier</option>
+                <option value="cursive">Cursive</option>
+                <option value="fantasy">Fantasy</option>
+            </select>
+            <select id="size">
+              <option>18</option>
+              <option>20</option>
+              <option>24</option>
+              <option>25</option>
+              <option>26</option>
+              <option>27</option>
+              <option>28</option>
+              <option>29</option>
+              <option>30</option>
+            </select>
+            <label><input type="checkbox" id="bold"><strong>B</strong></label>
+            <label><input type="checkbox" id="italic"><em>i</em></label>
+            <label><input type="checkbox" id="underline"><u>u</u></label>
+            <label class="display-none"><input type="checkbox" id="strikeout"><strike>s</strike></label>
+            <select id="align">
+                <option value="left">Left</option>
+                <option value="center">Center</option>
+                <option value="right">Right</option>
+                <option value="justify">Justify</option>
+            </select>
+            <select id="script">
+                <option value="normal">Normal</option>
+                <option value="super">Superscript</option>
+                <option value="sub">Subscript</option>
+            </select>
+            <select id="color" class="display-none">
+                <option value="black">Black</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+                <option value="blue">Blue</option>
+            </select>
+            <button id="undo">Undo</button>
+            <button id="redo">Redo</button>
+            <select id="valign"  class="display-none">
+                <option value="top">Top</option>
+                <option value="middle">Middle</option>
+                <option value="bottom">Bottom</option>
+            </select>
+            <details style="display: inline-block; position: relative;z-index: 100;">
+            <summary>Icons</summary>
+              <div style="background-color: white; border: 1px solid black;">              
+                <img src="./icons/mana.svg" class="all-icons-image" id="all-rule-icons">
+              </div>
+              <div>
+            </details>
+            <button id="set-rules">Set Rules</button>
+            </div>
+            
+            <div id="exampleEditor"></div>
+
+            <div id="examplePersistence"  class="display-none">
+                <div>
+                    <textarea></textarea>
+                </div>
+            </div>
+
+            <div class="editablePage" id="welcome">
+              <p>Whenever you discard a forest or plains card, you gain 3 life.</p>
+            </div>
+        </div>
+      </div>
+
+      <img class="border-image hidden" src="./borders/white.png" alt="">
+      <img class="border-image hidden" src="./borders/blue.png" alt="">
+      <img class="border-image hidden" src="./borders/black.png" alt="">
+      <img class="border-image hidden" src="./borders/red.png" alt="">
+      <img class="border-image hidden" src="./borders/green.png" alt="">
+      <img class="border-image hidden" src="./borders/gold.png" alt="">
+      <img class="border-image hidden" src="./borders/artifact.png" alt="">
+      <img class="border-image hidden" src="./borders/land.png" alt="">
+      <img class="rank-image hidden" src="./ranks/1.png" alt="">
+      <img class="rank-image hidden" src="./ranks/2.png" alt="">
+      <img class="rank-image hidden" src="./ranks/3.png" alt="">
+      <img class="rank-image hidden" src="./ranks/4.png" alt="">
+
+      <img class="circle-icon hidden" src="./icons/circled/0.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/1.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/2.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/3.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/4.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/5.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/6.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/7.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/8.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/9.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/b.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/c.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/g.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/r.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/s.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/u.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/w.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/x.svg" alt="">
+      <img class="circle-icon hidden" src="./icons/circled/y.svg" alt="">
+
+      <img class="all-icons hidden" src="./icons/mana.svg" alt="">
+
+      
+      <script>
+        window.onload = function() {
+            var elem = document.querySelector('#exampleEditor');
+            var exampleEditor = carota.editor.create(elem);
+    
+            // Set up our custom inline - a smiley emoji
+            var allIcons = document.querySelector('.all-icons');
+    
+            exampleEditor.customCodes = function(obj) {
+
+                if (obj.allIcons) {
+
+                    const coordinates = obj.allIcons.split("-").map((num)=>parseInt(num,10))
+                    return {
+                        // measure: must return width, ascent and descent
+                        measure: function(/*formatting*/) {
+                            return {
+                                width: 24,
+                                ascent: 22,
+                                descent: 0
+                            };
+                        },
+                        // draw: implements the appearance of the inline on canvas
+                        draw: function(ctx, x, y, width, ascent, descent, formatting) {
+                            // ctx.drawImage(allIcons, x, y - ascent, width, ascent);
+                            ctx.drawImage(allIcons,coordinates[0]*105,coordinates[1]*105.2, 105, 100, x, y - ascent, width, ascent);
+                        }
+                    }
+                }
+            };
+    
+            // Setting up the button so user can insert a allIcons
+            carota.dom.handleEvent(document.querySelector('#all-rule-icons'), 'click', function(event) {
+              const imageNode = document.querySelector('#all-rule-icons');
+              const widthChunk = imageNode.width/10;
+              const heightChunk = imageNode.height/7;
+              const x = event.offsetX;
+              const y = event.offsetY;
+              exampleEditor.insert({ allIcons: Math.floor(x/widthChunk)+ '-' + Math.floor(y/heightChunk)});
+            });
+    
+            // Wire up undo/redo commands
+            var undo = document.querySelector('#undo'),
+                redo = document.querySelector('#redo');
+    
+            carota.dom.handleEvent(undo, 'click', function() {
+                exampleEditor.performUndo(false);
+            });
+    
+            carota.dom.handleEvent(redo, 'click', function() {
+                exampleEditor.performUndo(true);
+            });
+    
+            var updateUndo = function() {
+                undo.disabled = !exampleEditor.canUndo(false);
+                redo.disabled = !exampleEditor.canUndo(true);
+            };
+    
+            // Wire up the toolbar controls
+            ['font', 'size', 'bold', 'italic', 'underline',
+             'strikeout', 'align', 'script', 'color'].forEach(function(id) {
+                var elem = document.querySelector('#' + id);
+    
+                // When the control changes value, update the selected range's formatting
+                carota.dom.handleEvent(elem, 'change', function() {
+                    var range = exampleEditor.selectedRange();
+                    var val = elem.nodeName === 'INPUT' ? elem.checked : elem.value;
+                    range.setFormatting(id, val);
+                });
+    
+                // When the selected range coordinates change, update the control
+                exampleEditor.selectionChanged(function(getFormatting) {
+                    var formatting = getFormatting();
+                    var val = id in formatting ? formatting[id] : carota.runs.defaultFormatting[id];
+                    if (elem.nodeName === 'INPUT') {
+                        if (val === carota.runs.multipleValues) {
+                            elem.indeterminate = true;
+                        } else {
+                            elem.indeterminate = false;
+                            elem.checked = val;
+                        }
+                    } else {
+                        elem.value = val;
+                    }
+                });
+            });
+    
+            var valign = document.querySelector('#valign')
+            carota.dom.handleEvent(valign, 'change', function() {
+                exampleEditor.setVerticalAlignment(valign.value);
+            });
+            
+            // We don't update the JSON view until half a second after the last change
+            // to avoid slowing things down too much
+            var persistenceTextArea = document.querySelector('#examplePersistence textarea');
+            var updateTimer = null;
+            var updatePersistenceView = function() {
+                if (updateTimer !== null) {
+                    clearTimeout(updateTimer);
+                }
+                updateTimer = setTimeout(function() {
+                    updateTimer = null;
+                    persistenceTextArea.value = JSON.stringify(exampleEditor.save(), null, 4);
+                }, 500);
+            };
+    
+            var manuallyChangingJson = 0;
+            carota.dom.handleEvent(persistenceTextArea, 'input', function() {
+                try {
+                    manuallyChangingJson++;
+                    exampleEditor.load(JSON.parse(persistenceTextArea.value), false);
+                } catch (x)  {
+                    // ignore if syntax errors
+                } finally {
+                    manuallyChangingJson--;
+                }
+            });
+    
+            // Whenever the document changes, re-display the JSON format and update undo buttons
+            exampleEditor.contentChanged(function() {
+                updateUndo();
+                if (!manuallyChangingJson) {
+                    updatePersistenceView();
+                }
+            });
+    
+            // Load one of the hidden chunks of HTML
+            var load = function(selector) {
+                var html = document.querySelector(selector);
+                if (html) {
+                    var runs = carota.html.parse(html, {
+                        carota: { color: 'orange', bold: true, size: 14 }
+                    });
+                    exampleEditor.load(runs);
+                }
+            };
+    
+            load('#welcome');
+        };
+        </script>
+    </main>
+  </body>
+</html>

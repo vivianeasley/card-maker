@@ -1,2 +1,4 @@
 # card-maker
-A simple card generator for games
+Just a simple card generator for personal games.
+
+[Create a card](https://vivianeasley.github.io/card-maker/)
